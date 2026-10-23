@@ -211,7 +211,7 @@ class _GamePageState extends State<GamePage> {
         borderRadius: BorderRadius.circular(7),
         border: Border.all(
           color: result == LetterResult.empty
-              ? (filled ? hitColor.withOpacity(0.65) : const Color(0xFFD2D7D2))
+              ? (filled ? const Color(0xA6467B68) : const Color(0xFFD2D7D2))
               : color,
           width: 1.5,
         ),
