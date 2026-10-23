@@ -107,7 +107,8 @@ class _GamePageState extends State<GamePage> {
 
   int get _hintCount {
     if (_attemptsMade < 4 || _finished) return 0;
-    return min(3, ((_attemptsMade - 4) ~/ 2) + 1);
+    final count = ((_attemptsMade - 4) ~/ 2) + 1;
+    return count > 3 ? 3 : count;
   }
 
   List<LetterResult> _evaluate(String guess) {
@@ -232,7 +233,8 @@ class _GamePageState extends State<GamePage> {
 
   Widget _board(double maxWidth) {
     const gap = 5.0;
-    final cellSize = min(48.0, (maxWidth - gap * (wordLength - 1)) / wordLength);
+    final double cellSize =
+        min(48.0, (maxWidth - gap * (wordLength - 1)) / wordLength).toDouble();
     final rows = <Widget>[];
 
     for (var row = 0; row < maxAttempts; row++) {
